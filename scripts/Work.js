@@ -42,6 +42,8 @@ export default class Work{
 
     mount(){
         this.parent.appendChild(this._iniObject())
+        this.canvas.width = this.canvas.scrollWidth - 10
+        this.canvas.height = this.canvas.scrollHeight - 10
         this.x = [this.canvas.scrollWidth / 2, 0]
         this.deg = [Math.random()*5 + 5, Math.random()*5 + 5]
         this.y = [0,this.canvas.scrollHeight / 2]
@@ -92,8 +94,8 @@ export default class Work{
     }
 
     _action = () => {
-        this.canvas.width = this.canvas.scrollWidth
-        this.canvas.height = this.canvas.scrollHeight
+        this.canvas.width = this.canvas.scrollWidth - 10
+        this.canvas.height = this.canvas.scrollHeight - 10
         this.square1.clearRect(0, 0 ,this.canvas.width + 10, this.canvas.height + 10)
         this.square1.fillStyle = "#900"
         this.square1.fillRect(this.x[0], this.y[0], 10, 10)
